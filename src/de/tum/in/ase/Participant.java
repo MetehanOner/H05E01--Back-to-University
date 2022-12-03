@@ -15,7 +15,7 @@ public abstract class Participant {
         return getFirstName() + getLastName();
     }
 
-    public abstract void attend();
+    public abstract void attend(Lecture lecture);
 
     public String getLastName() {
         return lastName;
