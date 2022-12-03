@@ -1,5 +1,7 @@
 package de.tum.in.ase;
 
+import java.util.Objects;
+
 public class ExerciseInstructor extends Participant {
 
     private Lecture lecture;
@@ -12,6 +14,15 @@ public class ExerciseInstructor extends Participant {
 
     @Override
     public void attend(Lecture lecture) {
+
+        for(int i=0; i< lecture.getExerciseInstructors().size(); i++){
+            if(Objects.equals(lecture.getExerciseInstructors().get(i).getTumID(), super.getTumID())){
+                lecture.addParticipant(this);
+            }
+        }
+
+        Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
+        lecture.addParticipant(s);
 
     }
 

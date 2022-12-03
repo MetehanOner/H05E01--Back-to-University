@@ -26,6 +26,8 @@ public class Lecture {
 
     public void addParticipant(Participant p){
 
+
+
     };
 
     public void addParticipants(List<Participant> participants){

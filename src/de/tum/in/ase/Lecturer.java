@@ -17,11 +17,13 @@ public class Lecturer extends Participant {
     @Override
     public void attend(Lecture lecture) {
 
+        lecture.addParticipant(this);
+
     }
 
     public void addLecture(Lecture lecture) {
 
-        if(!(lecture.getLecturer() == null)){
+        if(!(lecture.getLecturer() == null)) {
             System.out.println("The lecture "+lecture.getName()+" is already held by another lecturer.");
         }
 
