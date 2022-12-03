@@ -6,6 +6,7 @@ public class ExerciseInstructor extends Participant {
 
     protected ExerciseInstructor(String firstName, String lastName, String tumID) {
         super(firstName, lastName, tumID);
+
     }
 
     @Override
@@ -15,7 +16,7 @@ public class ExerciseInstructor extends Participant {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Exercise Instructor " + super.getName();
     }
 
     public void setLecture(Lecture lecture) {

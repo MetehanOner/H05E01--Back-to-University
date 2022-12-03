@@ -17,10 +17,11 @@ public class Lecture {
 
     private LectureHall lectureHall;
 
-    public Lecture(String id, String name){
+    public Lecture(String id, String name, Lecturer lecturer, LectureHall lectureHall){
         setId(id);
         setName(name);
-
+        setLecturer(lecturer);
+        setLectureHall(lectureHall);
     }
 
     public void addParticipant(Participant p){
@@ -83,4 +84,11 @@ public class Lecture {
         return tutors;
     }
 
+    public void setLectureHall(LectureHall lectureHall) {
+        this.lectureHall = lectureHall;
+    }
+
+    public LectureHall getLectureHall() {
+        return lectureHall;
+    }
 }

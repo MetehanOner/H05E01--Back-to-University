@@ -12,7 +12,7 @@ public abstract class Participant {
     }
 
     public String getName(){
-        return getFirstName() + getLastName();
+        return getFirstName() +" "+ getLastName();
     }
 
     public abstract void attend(Lecture lecture);

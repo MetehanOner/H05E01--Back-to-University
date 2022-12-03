@@ -2,7 +2,7 @@ package de.tum.in.ase;
 
 import java.util.List;
 
-public class Lecturer extends Participant{
+public class Lecturer extends Participant {
 
     private String title;
 
@@ -20,19 +20,29 @@ public class Lecturer extends Participant{
 
     public void addLecture(Lecture lecture) {
 
+        if(!(lecture.getLecturer() == null)){
+            System.out.println("The lecture "+lecture.getName()+" is already held by another lecturer.");
+        }
+
+        getLectures().add(lecture);
+
     }
 
     public void openLecture(Lecture lecture) {
+
+        System.out.println("Welcome to the lecture "+lecture.getName()+"!"+ "I'm Prof. "+lecture.getLecturer()+".");
 
     }
 
     public void closeLecture(Lecture lecture){
 
+        System.out.println("This is all for today. See you next week!");
+
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return getTitle() + super.getName();
     }
 
     public void setTitle(String title) {
