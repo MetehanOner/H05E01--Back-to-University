@@ -6,6 +6,7 @@ public class Lecturer extends Participant{
 
     protected Lecturer(String firstName, String lastName, String tumID) {
         super(firstName, lastName, tumID);
+        setTitle(getTitle());
     }
 
     @Override
@@ -28,6 +29,14 @@ public class Lecturer extends Participant{
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     /* @Override
