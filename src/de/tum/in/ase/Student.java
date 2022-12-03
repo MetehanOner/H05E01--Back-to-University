@@ -1,8 +1,8 @@
 package de.tum.in.ase;
 
-public class Student extends Participant{
+public class Student extends Participant {
 
-    protected Student(String firstName, String lastName, String tumID) {
+    public Student(String firstName, String lastName, String tumID) {
         super(firstName, lastName, tumID);
     }
 
