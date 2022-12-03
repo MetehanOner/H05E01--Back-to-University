@@ -15,7 +15,11 @@ public class Lecture {
 
     private Lecturer lecturer;
 
-    public Lecture(){
+    private LectureHall lectureHall;
+
+    public Lecture(String id, String name){
+        setId(id);
+        setName(name);
 
     }
 
