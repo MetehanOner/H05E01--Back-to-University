@@ -4,8 +4,9 @@ public class Tutor extends Participant{
 
     private Lecture lecture;
 
-    protected Tutor(String firstName, String lastName, String tumID) {
+    protected Tutor(String firstName, String lastName, String tumID, Lecture lecture) {
         super(firstName, lastName, tumID);
+        setLecture(lecture);
     }
 
     @Override

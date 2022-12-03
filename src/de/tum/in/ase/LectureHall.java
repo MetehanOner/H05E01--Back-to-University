@@ -9,11 +9,14 @@ public class LectureHall {
     private int rows;
     private Student[][] rowsOfStudents;
 
-    public LectureHall(){
+    public LectureHall(String name, int capacity){
+
+        setName(name);
+        setCapacity(capacity);
 
     }
 
-    public void placeStudent(List<Student> waitingStudents){
+    public void placeStudents(List<Student> waitingStudents){
 
     }
 
