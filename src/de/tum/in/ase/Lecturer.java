@@ -1,8 +1,12 @@
 package de.tum.in.ase;
 
+import java.util.List;
+
 public class Lecturer extends Participant{
 
     private String title;
+
+    private List<Lecture> lectures;
 
     protected Lecturer(String firstName, String lastName, String tumID) {
         super(firstName, lastName, tumID);
@@ -37,6 +41,14 @@ public class Lecturer extends Participant{
 
     public String getTitle() {
         return title;
+    }
+
+    public List<Lecture> getLectures() {
+        return lectures;
+    }
+
+    public void setLectures(List<Lecture> lectures) {
+        this.lectures = lectures;
     }
 
     /* @Override

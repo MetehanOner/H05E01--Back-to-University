@@ -7,9 +7,16 @@ public class Lecture {
     private String id;
     private String name;
 
+    private List<Student> students;
+
+    private List<Tutor> tutors;
+
+    private List<ExerciseInstructor> exerciseInstructors;
+
+    private Lecturer lecturer;
+
     public Lecture(){
-        setName(getName());
-        setId(getId());
+
     }
 
     public void addParticipant(Participant p){
@@ -39,4 +46,37 @@ public class Lecture {
     public String getId() {
         return id;
     }
+
+    public void setExerciseInstructors(List<ExerciseInstructor> exerciseInstructors) {
+        this.exerciseInstructors = exerciseInstructors;
+    }
+
+    public void setLecturer(Lecturer lecturer) {
+        this.lecturer = lecturer;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
+
+    public void setTutors(List<Tutor> tutors) {
+        this.tutors = tutors;
+    }
+
+    public Lecturer getLecturer() {
+        return lecturer;
+    }
+
+    public List<ExerciseInstructor> getExerciseInstructors() {
+        return exerciseInstructors;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public List<Tutor> getTutors() {
+        return tutors;
+    }
+
 }
