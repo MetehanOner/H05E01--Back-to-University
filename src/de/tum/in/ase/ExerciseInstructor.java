@@ -4,7 +4,7 @@ public class ExerciseInstructor extends Participant {
 
     private Lecture lecture;
 
-    protected ExerciseInstructor(String firstName, String lastName, String tumID, Lecture lecture) {
+    public ExerciseInstructor(String firstName, String lastName, String tumID, Lecture lecture) {
         super(firstName, lastName, tumID);
         setLecture(lecture);
 

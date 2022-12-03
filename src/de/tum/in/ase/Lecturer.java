@@ -8,7 +8,7 @@ public class Lecturer extends Participant {
 
     private List<Lecture> lectures;
 
-    protected Lecturer(String firstName, String lastName, String tumID, String title) {
+    public Lecturer(String firstName, String lastName, String tumID, String title) {
         super(firstName, lastName, tumID);
         setTitle(title);
 
