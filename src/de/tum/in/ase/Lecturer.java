@@ -10,7 +10,7 @@ public class Lecturer extends Participant {
 
     protected Lecturer(String firstName, String lastName, String tumID) {
         super(firstName, lastName, tumID);
-        setTitle(getTitle());
+        setTitle( getTitle() );
     }
 
     @Override
