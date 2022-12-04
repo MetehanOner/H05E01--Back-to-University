@@ -40,32 +40,32 @@ public class Lecture {
 
         if(p instanceof Student){
 
-            for(int i = 0; i < getStudents().size(); i++){
+            /*for(int i = 0; i < getStudents().size(); i++){
                 if (Objects.equals(getStudents().get(i).getTumID(), p.getTumID())){
                    System.out.println(getStudents().get(i).getName() +" tumID:"+ getStudents().get(i).getTumID() +" already attends/holds the lecture.");
                 }
-            }
+            }*/
 
             //not related to amount of students interesting??
             getStudents().add((Student) p);
 
         } else if (p instanceof Tutor) {
 
-            for(int i = 0; i < getTutors().size(); i++){
+            /*for(int i = 0; i < getTutors().size(); i++){
                 if (Objects.equals(getTutors().get(i).getTumID(), p.getTumID())){
                     System.out.println(getTutors().get(i).getName() +" tumID:"+ getTutors().get(i).getTumID() +" already attends/holds the lecture.");
                 }
-            }
+            }*/
 
             getTutors().add((Tutor) p);
 
         } else if (p instanceof ExerciseInstructor){
 
-            for(int i = 0; i < getExerciseInstructors().size(); i++){
+            /*for(int i = 0; i < getExerciseInstructors().size(); i++){
                 if (Objects.equals(getExerciseInstructors().get(i).getTumID(), p.getTumID())){
                     System.out.println(getExerciseInstructors().get(i).getName() +" tumID:"+ getExerciseInstructors().get(i).getTumID() +" already attends/holds the lecture.");
                 }
-            }
+            }*/
 
             getExerciseInstructors().add((ExerciseInstructor) p);
 
