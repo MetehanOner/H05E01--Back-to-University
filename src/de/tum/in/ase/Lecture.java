@@ -51,7 +51,15 @@ public class Lecture {
 
     public void addParticipants(List<Participant> participants){
 
-
+        for(int i = 0; i < participants.size(); i++){
+            if(participants.get(i) instanceof Student){
+                getStudents().add((Student) participants.get(i));
+            } else if (participants.get(i) instanceof Tutor) {
+                getTutors().add((Tutor) participants.get(i));
+            } else if (participants.get(i) instanceof ExerciseInstructor) {
+                getExerciseInstructors().add((ExerciseInstructor) participants.get(i));
+            }
+        }
 
     }
 
