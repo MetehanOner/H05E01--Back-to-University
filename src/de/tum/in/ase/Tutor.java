@@ -14,12 +14,19 @@ public class Tutor extends Participant{
     @Override
     public void attend(Lecture lecture) {
 
+        Tutor t = new Tutor(getFirstName(), getLastName(), getTumID(), getLecture());
+
+        for(int i=0; i< lecture.getTutors().size(); i++){
+        }
+
+
+
         if(lecture.getTutors().size() == 0){
-            lecture.addParticipant(this);
+            lecture.addParticipant(t);
         } else {
             for(int i=0; i< lecture.getTutors().size(); i++){
                 if(Objects.equals(lecture.getTutors().get(i).getTumID(), getTumID())){
-                    lecture.addParticipant(this);
+                    lecture.addParticipant(t);
                 }
             }
 
@@ -36,5 +43,25 @@ public class Tutor extends Participant{
 
     public Lecture getLecture() {
         return lecture;
+    }
+
+    @Override
+    public String getLastName() {
+        return super.getLastName();
+    }
+
+    @Override
+    public String getFirstName() {
+        return super.getFirstName();
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
+    public String getTumID() {
+        return super.getTumID();
     }
 }

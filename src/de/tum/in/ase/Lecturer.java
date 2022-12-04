@@ -29,10 +29,10 @@ public class Lecturer extends Participant {
 
     public void addLecture(Lecture lecture) {
 
-        if(!(lecture.getLecturer() == null)){
+        if(!(lecture.getLecturer().getTumID() == null)){
             System.out.println("The lecture "+lecture.getName()+" is already held by another lecturer.");
         } else {
-            lecture.setLecturer(this);
+
             getLectures().add(lecture);
         }
 
