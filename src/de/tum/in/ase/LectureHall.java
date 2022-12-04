@@ -57,6 +57,22 @@ public class LectureHall {
         }
 
         //System.out.print(this.toString());
+        String hall = "";
+
+        for (int i=0; i < getRows(); i++) {
+            hall = hall + "Row "+(i+1)+": ";
+            for (int j=0; j<30; j++){
+                    if (i*30+j < corner){
+                         hall = hall + "["+ getRowsOfStudents()[j][i].getName() + "]" ;
+                    }
+                    else{
+                        hall = hall + "[]" ;
+                    }
+                }
+            hall += "\n";
+        }
+
+        System.out.print(hall);
 
     }
 
