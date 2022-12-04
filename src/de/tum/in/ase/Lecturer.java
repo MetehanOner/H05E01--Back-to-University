@@ -90,10 +90,4 @@ public class Lecturer extends Participant {
         return super.getName();
     }
 
-    /* @Override
-    public String toString() {
-        return "Lecturer{" +
-                "title='" + title + '\'' +
-                '}';
-    }*/
 }
