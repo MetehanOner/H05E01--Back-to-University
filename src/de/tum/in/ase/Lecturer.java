@@ -21,20 +21,19 @@ public class Lecturer extends Participant {
     @Override
     public void attend(Lecture lecture) {
 
-
-
         lecture.addParticipant(this);
 
     }
 
     public void addLecture(Lecture lecture) {
 
-        /*if(!(lecture.getLecturer().getTumID() == null)){
-            System.out.println("The lecture "+lecture.getName()+" is already held by another lecturer.");
-        } else {
+        if(lecture.getLecturer() == null){
 
             getLectures().add(lecture);
-        }*/
+            lecture.setLecturer(this);
+        }
+
+        System.out.println("The lecture "+lecture.getName()+" is already held by another lecturer.");
 
     }
 
