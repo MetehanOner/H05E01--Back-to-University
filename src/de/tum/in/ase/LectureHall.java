@@ -40,7 +40,7 @@ public class LectureHall {
 
     public void placeStudents(List<Student> waitingStudents){
 
-        System.out.println("Waiting students: ");
+        System.out.println("Waiting students: " + waitingStudents.size());
 
         int corner;
         if(waitingStudents.size() > getCapacity()){
@@ -56,7 +56,7 @@ public class LectureHall {
             getRowsOfStudents()[i%30][i/30] = waitingStudents.get(i);
         }
 
-        System.out.print(this.toString());
+        //System.out.print(this.toString());
 
     }
 
