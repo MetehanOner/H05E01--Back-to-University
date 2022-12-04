@@ -37,17 +37,21 @@ public class Lecture {
 
     public void addParticipant(Participant p){
 
-        if(p instanceof Student){
+        /*if(p instanceof Student){
             getStudents().add((Student) p);
         } else if (p instanceof Tutor) {
             getTutors().add((Tutor) p);
         } else if (p instanceof ExerciseInstructor){
             getExerciseInstructors().add((ExerciseInstructor) p);
-        }
+        }*/
+
+
 
     }
 
     public void addParticipants(List<Participant> participants){
+
+
 
     }
 
