@@ -5,8 +5,6 @@ public abstract class Participant {
     private String lastName;
     private String tumID;
 
-    private Student student;
-
     protected Participant(String firstName, String lastName, String tumID){
         setFirstName(firstName);
         setLastName(lastName);

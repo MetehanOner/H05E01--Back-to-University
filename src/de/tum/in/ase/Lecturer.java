@@ -1,6 +1,7 @@
 package de.tum.in.ase;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Lecturer extends Participant {
 
@@ -23,11 +24,15 @@ public class Lecturer extends Participant {
 
     public void addLecture(Lecture lecture) {
 
-        if(!(lecture.getLecturer() == null)) {
-            System.out.println("The lecture "+lecture.getName()+" is already held by another lecturer.");
+        if((lecture.getLecturer() == null)) {
+            return;
         }
 
-        getLectures().add(lecture);
+        if(Objects.equals(lecture.getLecturer().getTumID(), super.getTumID())){
+            System.out.println("The lecture "+lecture.getName()+" is already held by another lecturer.");
+        } else {
+            getLectures().add(lecture);
+        }
 
     }
 
