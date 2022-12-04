@@ -1,5 +1,6 @@
 package de.tum.in.ase;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,7 +13,7 @@ public class Lecturer extends Participant {
     public Lecturer(String firstName, String lastName, String tumID, String title) {
         super(firstName, lastName, tumID);
         setTitle(title);
-
+        setLectures(new ArrayList<>());
     }
 
     @Override
