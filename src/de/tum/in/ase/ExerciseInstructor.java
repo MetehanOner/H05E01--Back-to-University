@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class ExerciseInstructor extends Participant {
 
-    //private Lecture lecture;
+    private Lecture lecture;
 
-    public ExerciseInstructor(String firstName, String lastName, String tumID/*, Lecture lecture*/) {
+    public ExerciseInstructor(String firstName, String lastName, String tumID, Lecture lecture) {
         super(firstName, lastName, tumID);
 
-        //setLecture(lecture);
+        setLecture(lecture);
 
     }
 
@@ -32,11 +32,11 @@ public class ExerciseInstructor extends Participant {
         return "Exercise Instructor " + super.getName();
     }
 
-    /*public void setLecture(Lecture lecture) {
+    public void setLecture(Lecture lecture) {
         this.lecture = lecture;
     }
 
     public Lecture getLecture() {
         return lecture;
-    }*/
+    }
 }
