@@ -23,7 +23,7 @@ public class LectureHall {
             int temp = capacity % 30;
 
             if(temp == 0){
-                setCapacity(capacity/30);
+                setRows(capacity/30);
                 setCapacity(capacity);
             } else {
                 capacity = capacity - temp;
@@ -42,36 +42,21 @@ public class LectureHall {
 
         System.out.println("Waiting students: " + waitingStudents.size());
 
+        int corner;
         if(waitingStudents.size() > getCapacity()){
             System.out.println(getName() + " hall doesn't have enough places for all the students!");
             System.out.println("We can place only the first " +getCapacity()+ " out of "+waitingStudents.size()+" students.");
-
-            for(int i = 0; i < getRows() ; i++) {
-                for(int j = 0; j < 30; j++) {
-
-                        getRowsOfStudents()[j][i] = waitingStudents.get(j);
-
-                }
-            }
-
-            System.out.println(Arrays.deepToString(getRowsOfStudents()));
-
-        } else if (waitingStudents.size() == getCapacity()) {
-
-            for(int i = 0; i < getRows() ; i++) {
-                for(int j = 0; j < 30; j++) {
-
-                    getRowsOfStudents()[j][i] = waitingStudents.get(j);
-
-                }
-            }
-
-            System.out.println(Arrays.deepToString(getRowsOfStudents()));
-
-            System.out.println("All students are sitting in the lecture hall.");
+            corner = getCapacity();
+        } else {
+            corner = waitingStudents.size();
+            //System.out.println("All students are sitting in the lecture hall.");
         }
 
+        for(int i = 0; i < corner ; i++) {
+            getRowsOfStudents()[i%30][i/30] = waitingStudents.get(i);
+        }
 
+        System.out.println(getRowsOfStudents().toString());
 
     }
 
@@ -82,8 +67,8 @@ public class LectureHall {
     @Override
     public String toString() {
         return
-
-                getName() + " hall:\n" + "Row 1: " + getRowsOfStudents().toString();
+                getName() + " hall:\n" +
+                        "Row 1: " + getRowsOfStudents();
     }
 
     public void setName(String name) {

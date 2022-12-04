@@ -15,6 +15,11 @@ public class Student extends Participant {
     }
 
     @Override
+    public String toString() {
+        return super.getName();
+    }
+
+    @Override
     public String getFirstName() {
         return super.getFirstName();
     }
