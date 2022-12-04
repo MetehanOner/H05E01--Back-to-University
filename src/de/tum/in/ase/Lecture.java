@@ -99,6 +99,15 @@ public class Lecture {
 
     public void takePlace(){
 
+        //place students
+        getLectureHall().placeStudents(getStudents());
+
+        getLecturer().openLecture(this);
+
+        getLecturer().closeLecture(this);
+
+        getLectureHall().empty();
+
     }
 
     public void setId(String id) {
