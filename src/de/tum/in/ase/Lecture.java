@@ -46,7 +46,8 @@ public class Lecture {
                 }
             }
 
-            //getStudents().add((Student) p);
+            //not related to amount of students interesting??
+            getStudents().add((Student) p);
 
         } else if (p instanceof Tutor) {
 
