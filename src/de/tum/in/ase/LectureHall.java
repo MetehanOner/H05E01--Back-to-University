@@ -1,6 +1,7 @@
 package de.tum.in.ase;
 
 import java.util.List;
+import java.util.Stack;
 
 public class LectureHall {
 
@@ -16,7 +17,15 @@ public class LectureHall {
         if(capacity <= 90){
             setCapacity(90);
         } else {
-            setCapacity(capacity);
+            int temp = capacity % 30;
+
+            if(temp == 0){
+                setCapacity(capacity);
+            } else {
+                capacity = capacity - temp;
+                setCapacity(capacity);
+            }
+
         }
 
     }
