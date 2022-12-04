@@ -16,15 +16,40 @@ public class ExerciseInstructor extends Participant {
     @Override
     public void attend(Lecture lecture) {
 
-        for(int i=0; i< lecture.getExerciseInstructors().size(); i++){
-            if(Objects.equals(lecture.getExerciseInstructors().get(i).getTumID(), super.getTumID())){
-                lecture.addParticipant(this);
+        if(lecture.getExerciseInstructors().size() == 0){
+            lecture.addParticipant(this);
+        } else {
+            for(int i=0; i< lecture.getExerciseInstructors().size(); i++){
+                if(Objects.equals(lecture.getExerciseInstructors().get(i).getTumID(), super.getTumID())){
+                    lecture.addParticipant(this);
+                }
             }
+
+            Student s = new Student(getFirstName(), getLastName(), getTumID());
+            lecture.addParticipant(s);
+
         }
 
-        Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
-        lecture.addParticipant(s);
+    }
 
+    @Override
+    public String getLastName() {
+        return super.getLastName();
+    }
+
+    @Override
+    public String getFirstName() {
+        return super.getFirstName();
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
+    public String getTumID() {
+        return super.getTumID();
     }
 
     @Override
