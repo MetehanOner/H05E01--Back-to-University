@@ -33,7 +33,7 @@ public class LectureHall {
 
         }
 
-        Student[][] rowList = new Student[getRows()][30];
+        Student[][] rowList = new Student[30][getRows()];
         setRowsOfStudents(rowList);
 
     }
@@ -57,19 +57,19 @@ public class LectureHall {
         }
 
         //System.out.print(this.toString());
-        String hall = getName() + " hall:\n";
+        StringBuilder hall = new StringBuilder(getName() + " hall:\n");
 
         for (int i=0; i < getRows(); i++) {
-            hall = hall + "Row "+(i+1)+": ";
+            hall.append("Row ").append(i + 1).append(": ");
             for (int j=0; j<30; j++){
                     if (i*30+j < corner){
-                         hall = hall + "["+ getRowsOfStudents()[j][i].getName() + "]" ;
+                         hall.append("[").append(getRowsOfStudents()[j][i].getName()).append("]");
                     }
                     else{
-                        hall = hall + "[]" ;
+                        hall.append("[]");
                     }
                 }
-            hall += "\n";
+            hall.append("\n");
         }
 
         System.out.print(hall);
