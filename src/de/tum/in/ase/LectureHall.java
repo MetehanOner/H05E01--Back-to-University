@@ -56,7 +56,7 @@ public class LectureHall {
             getRowsOfStudents()[i%30][i/30] = waitingStudents.get(i);
         }
 
-        System.out.println(getRowsOfStudents().toString());
+        System.out.println(this.toString());
 
     }
 
@@ -66,9 +66,19 @@ public class LectureHall {
 
     @Override
     public String toString() {
-        return
-                getName() + " hall:\n" +
-                        "Row 1: " + getRowsOfStudents();
+
+        String hall = "";
+
+        for (int i=0; i<getRows(); i++){
+            hall += "Row "+(i+1)+": ";
+            for (int j=0; j<30; j++){
+                hall += "["+ getRowsOfStudents()[j][i].getName() + "]" ;
+            }
+            hall += "\n";
+        }
+
+        return hall;
+
     }
 
     public void setName(String name) {
