@@ -1,5 +1,6 @@
 package de.tum.in.ase;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
@@ -31,6 +32,9 @@ public class LectureHall {
 
         }
 
+        Student[][] rowList = new Student[30][getRows()];
+        setRowsOfStudents(rowList);
+
     }
 
     public void placeStudents(List<Student> waitingStudents){
@@ -41,14 +45,11 @@ public class LectureHall {
             System.out.println(getName() + " hall doesn't have enough places for all the students!");
             System.out.println("We can place only the first " +getCapacity()+ " out of "+waitingStudents.size()+" students.");
 
-            int remainder = getCapacity() % 30;
-            int sizeY = (getCapacity()-remainder)/30;
-
-            for(int i = 0; i < sizeY ; i++) {
+            for(int i = 0; i < getRows() ; i++) {
                 for(int j = 0; j < 30; j++) {
-                    for (int k=0; k < waitingStudents.size(); k++) {
-                        getRowsOfStudents()[j][i] = waitingStudents.get(k);
-                    }
+
+                        getRowsOfStudents()[j][i] = waitingStudents.get(j);
+
                 }
             }
 
@@ -56,6 +57,15 @@ public class LectureHall {
 
         } else if (waitingStudents.size() == getCapacity()) {
 
+            for(int i = 0; i < getRows() ; i++) {
+                for(int j = 0; j < 30; j++) {
+
+                    getRowsOfStudents()[j][i] = waitingStudents.get(j);
+
+                }
+            }
+
+            System.out.println(getRowsOfStudents().toString());
 
             System.out.println("All students are sitting in the lecture hall.");
         }
@@ -70,7 +80,9 @@ public class LectureHall {
 
     @Override
     public String toString() {
-        return super.toString();
+        return
+
+                getName() + "hall:\n" + "Row 1: " + getRowsOfStudents().toString();
     }
 
     public void setName(String name) {
