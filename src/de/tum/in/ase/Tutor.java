@@ -14,26 +14,7 @@ public class Tutor extends Participant{
     @Override
     public void attend(Lecture lecture) {
 
-        Tutor t = new Tutor(getFirstName(), getLastName(), getTumID(), getLecture());
 
-        for(int i=0; i< lecture.getTutors().size(); i++){
-        }
-
-
-
-        if(lecture.getTutors().size() == 0){
-            lecture.addParticipant(t);
-        } else {
-            for(int i=0; i< lecture.getTutors().size(); i++){
-                if(Objects.equals(lecture.getTutors().get(i).getTumID(), getTumID())){
-                    lecture.addParticipant(t);
-                }
-            }
-
-            Student s = new Student(getFirstName(), getLastName(), getTumID());
-            lecture.addParticipant(s);
-
-        }
 
     }
 

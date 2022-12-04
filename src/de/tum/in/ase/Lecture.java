@@ -37,14 +37,47 @@ public class Lecture {
 
     public void addParticipant(Participant p){
 
-        /*if(p instanceof Student){
-            getStudents().add((Student) p);
-        } else if (p instanceof Tutor) {
-            getTutors().add((Tutor) p);
-        } else if (p instanceof ExerciseInstructor){
-            getExerciseInstructors().add((ExerciseInstructor) p);
-        }*/
+        if(p instanceof Student){
 
+            for(int i = 0; i < getStudents().size(); i++){
+                if (getStudents().get(i) == p){
+                   System.out.println(getStudents().get(i).getName() +" tumID:"+ getStudents().get(i).getTumID() +" already attends/holds the lecture.");
+                }
+            }
+
+            getStudents().add((Student) p);
+
+        } else if (p instanceof Tutor) {
+
+            for(int i = 0; i < getTutors().size(); i++){
+                if (getTutors().get(i) == p){
+                    System.out.println(getTutors().get(i).getName() +" tumID:"+ getTutors().get(i).getTumID() +" already attends/holds the lecture.");
+                }
+            }
+
+            getTutors().add((Tutor) p);
+
+        } else if (p instanceof ExerciseInstructor){
+
+            for(int i = 0; i < getExerciseInstructors().size(); i++){
+                if (getExerciseInstructors().get(i) == p){
+                    System.out.println(getExerciseInstructors().get(i).getName() +" tumID:"+ getExerciseInstructors().get(i).getTumID() +" already attends/holds the lecture.");
+                }
+            }
+
+            getExerciseInstructors().add((ExerciseInstructor) p);
+
+        } else if (p instanceof Lecturer) {
+
+            if(!(getLecturer()==null)) {
+                System.out.println("This lecture already has a lecturer!");
+            } else {
+                setLecturer((Lecturer) p);
+            }
+
+        } else {
+            System.out.println("No such participants allowed in this lecture!");
+        }
 
 
     }
@@ -53,11 +86,11 @@ public class Lecture {
 
         for(int i = 0; i < participants.size(); i++){
             if(participants.get(i) instanceof Student){
-                getStudents().add((Student) participants.get(i));
+                addParticipant(participants.get(i));
             } else if (participants.get(i) instanceof Tutor) {
-                getTutors().add((Tutor) participants.get(i));
+                addParticipant(participants.get(i));
             } else if (participants.get(i) instanceof ExerciseInstructor) {
-                getExerciseInstructors().add((ExerciseInstructor) participants.get(i));
+                addParticipant(participants.get(i));;
             }
         }
 
