@@ -49,7 +49,7 @@ public class LectureHall {
             corner = getCapacity();
         } else {
             corner = waitingStudents.size();
-            //System.out.println("All students are sitting in the lecture hall.");
+            System.out.println("All students are sitting in the lecture hall.");
         }
 
         for(int i = 0; i < corner ; i++) {
