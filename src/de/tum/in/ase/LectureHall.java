@@ -1,6 +1,7 @@
 package de.tum.in.ase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
@@ -53,7 +54,7 @@ public class LectureHall {
                 }
             }
 
-            System.out.println(getRowsOfStudents().toString());
+            System.out.println(Arrays.deepToString(getRowsOfStudents()));
 
         } else if (waitingStudents.size() == getCapacity()) {
 
@@ -65,7 +66,7 @@ public class LectureHall {
                 }
             }
 
-            System.out.println(getRowsOfStudents().toString());
+            System.out.println(Arrays.deepToString(getRowsOfStudents()));
 
             System.out.println("All students are sitting in the lecture hall.");
         }
@@ -82,7 +83,7 @@ public class LectureHall {
     public String toString() {
         return
 
-                getName() + "hall:\n" + "Row 1: " + getRowsOfStudents().toString();
+                getName() + " hall:\n" + "Row 1: " + getRowsOfStudents().toString();
     }
 
     public void setName(String name) {
