@@ -24,11 +24,7 @@ public class Lecturer extends Participant {
 
     public void addLecture(Lecture lecture) {
 
-        if((lecture.getLecturer() == null)) {
-            return;
-        }
-
-        if(Objects.equals(lecture.getLecturer().getTumID(), super.getTumID())){
+        if(Objects.equals(lecture.getLecturer().getTumID(), getTumID())){
             System.out.println("The lecture "+lecture.getName()+" is already held by another lecturer.");
         } else {
             getLectures().add(lecture);
@@ -67,6 +63,26 @@ public class Lecturer extends Participant {
 
     public void setLectures(List<Lecture> lectures) {
         this.lectures = lectures;
+    }
+
+    @Override
+    public String getTumID() {
+        return super.getTumID();
+    }
+
+    @Override
+    public String getFirstName() {
+        return super.getFirstName();
+    }
+
+    @Override
+    public String getLastName() {
+        return super.getLastName();
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
     }
 
     /* @Override
