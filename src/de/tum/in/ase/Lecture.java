@@ -1,5 +1,6 @@
 package de.tum.in.ase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lecture {
@@ -22,6 +23,16 @@ public class Lecture {
         setName(name);
         setLecturer(lecturer);
         setLectureHall(lectureHall);
+
+        List<Student> sList = new ArrayList<>();
+        setStudents(sList);
+
+        List<Tutor> tList = new ArrayList<>();
+        setTutors(tList);
+
+        List<ExerciseInstructor> eList = new ArrayList<>();
+        setExerciseInstructors(eList);
+
     }
 
     public void addParticipant(Participant p){
