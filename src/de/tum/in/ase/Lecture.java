@@ -46,7 +46,7 @@ public class Lecture {
                 }
             }
 
-            getStudents().add((Student) p);
+            //getStudents().add((Student) p);
 
         } else if (p instanceof Tutor) {
 

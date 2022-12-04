@@ -34,6 +34,14 @@ public class LectureHall {
 
         System.out.println("Waiting students: " + waitingStudents.size());
 
+        if(waitingStudents.size()>getCapacity()){
+            System.out.println(getName() + " hall doesn't have enough places for all the students!");
+            System.out.println("We can place only the first " +getCapacity()+ "out of "+waitingStudents.size()+" students.");
+            
+        }
+
+        System.out.println("All students are sitting in the lecture hall.");
+
     }
 
     public void empty(){
