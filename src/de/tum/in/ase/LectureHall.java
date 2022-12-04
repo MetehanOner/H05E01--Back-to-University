@@ -56,7 +56,7 @@ public class LectureHall {
             getRowsOfStudents()[i%30][i/30] = waitingStudents.get(i);
         }
 
-        //System.out.println(this.toString());
+        //System.out.println(this.toString());//
 
     }
 
