@@ -1,6 +1,6 @@
 package de.tum.in.ase;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -66,14 +66,24 @@ public class Main {
     //TODO implement methods generateStudents and generateTutors
 
     //TODO think of the most suitable access modifier for those helper methods
-    /*
-    static List<Student> generateStudents(int amount){
+
+    public static List<Student> generateStudents(int amount){
+
+        List<Student> sList = new ArrayList<>();
+
+        String TUM_ID_STRING = "";
+        for(int i = 0; i < amount; i++){
+            TUM_ID_STRING = TUM_ID_STRING + i;
+            Student s = new Student("Mete", "Oner", TUM_ID_STRING);
+            sList.add(s);
+        }
+
+        return sList;
+    }
+
+    public static List<Tutor> generateTutors(int amount,Lecture lecture){
         return null;
     }
 
-    static List<Tutor> generateTutors(int amount,Lecture lecture){
-        return null;
-    }
 
-     */
 }
