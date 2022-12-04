@@ -14,14 +14,19 @@ public class Tutor extends Participant{
     @Override
     public void attend(Lecture lecture) {
 
-        for(int i=0; i< lecture.getTutors().size(); i++) {
-            if(Objects.equals(lecture.getTutors().get(i).getTumID(), super.getTumID())){
-                lecture.addParticipant(this);
+        if(lecture.getTutors().size() == 0){
+            lecture.addParticipant(this);
+        } else {
+            for(int i=0; i< lecture.getTutors().size(); i++){
+                if(Objects.equals(lecture.getTutors().get(i).getTumID(), getTumID())){
+                    lecture.addParticipant(this);
+                }
             }
-        }
 
-        Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
-        lecture.addParticipant(s);
+            Student s = new Student(getFirstName(), getLastName(), getTumID());
+            lecture.addParticipant(s);
+
+        }
 
     }
 

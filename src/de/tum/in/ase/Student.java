@@ -9,7 +9,8 @@ public class Student extends Participant {
     @Override
     public void attend(Lecture lecture) {
 
-        lecture.addParticipant(this);
+        Student s = new Student(getFirstName(), getLastName(), getTumID());
+        lecture.addParticipant(s);
 
     }
 }

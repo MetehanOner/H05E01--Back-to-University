@@ -13,11 +13,15 @@ public class Lecturer extends Participant {
     public Lecturer(String firstName, String lastName, String tumID, String title) {
         super(firstName, lastName, tumID);
         setTitle(title);
-        setLectures(new ArrayList<>());
+
+        List<Lecture> lList = new ArrayList<>();
+        setLectures(lList);
     }
 
     @Override
     public void attend(Lecture lecture) {
+
+
 
         lecture.addParticipant(this);
 

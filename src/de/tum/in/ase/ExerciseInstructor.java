@@ -20,7 +20,7 @@ public class ExerciseInstructor extends Participant {
             lecture.addParticipant(this);
         } else {
             for(int i=0; i< lecture.getExerciseInstructors().size(); i++){
-                if(Objects.equals(lecture.getExerciseInstructors().get(i).getTumID(), super.getTumID())){
+                if(Objects.equals(lecture.getExerciseInstructors().get(i).getTumID(), getTumID())){
                     lecture.addParticipant(this);
                 }
             }
