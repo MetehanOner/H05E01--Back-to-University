@@ -83,20 +83,25 @@ public class LectureHall {
 
     public void empty(){
 
+        for(int i = 0; i < getCapacity() ; i++) {
+            getRowsOfStudents()[i%30][i/30] = null;
+        }
+
     }
 
     @Override
     public String toString() {
 
         StringBuilder hall = new StringBuilder(getName() + " hall:\n");
+        int place = 30;
 
         for (int i=0; i < getRows(); i++) {
             hall.append("Row ").append(i + 1).append(": ");
-            for (int j=0; j<30; j++){
-                if (i*30+j < getCapacity()){
+            for (int j=0; j < place; j++) {
+                if ((i*place)+j < getCapacity()){
                     hall.append("[").append(getRowsOfStudents()[j][i].getName()).append("]");
                 }
-                else{
+                else {
                     hall.append("[]");
                 }
             }

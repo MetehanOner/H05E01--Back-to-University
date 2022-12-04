@@ -51,7 +51,7 @@ public class Lecture {
 
         } else if (p instanceof Tutor) {
 
-            for(int i = 0; i < getTutors().size(); i++){
+            for(int i = 0; i < getTutors().size(); i++) {
                 if (Objects.equals(getTutors().get(i).getTumID(), p.getTumID())){
                     System.out.println(getTutors().get(i).getName() +" tumID:"+ getTutors().get(i).getTumID() +" already attends/holds the lecture.");
                 }
