@@ -81,8 +81,18 @@ public class Main {
         return sList;
     }
 
-    public static List<Tutor> generateTutors(int amount,Lecture lecture){
-        return null;
+    public static List<Tutor> generateTutors(int amount, Lecture lecture){
+
+        List<Tutor> tList = new ArrayList<>();
+
+        String TUM_ID_STRING = "";
+        for(int i = 0; i < amount; i++){
+            TUM_ID_STRING = TUM_ID_STRING + i;
+            Tutor t = new Tutor("Mete", "Oner", TUM_ID_STRING, lecture);
+            tList.add(t);
+        }
+
+        return tList;
     }
 
 
