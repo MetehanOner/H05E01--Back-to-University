@@ -13,4 +13,24 @@ public class Student extends Participant {
         lecture.addParticipant(s);
 
     }
+
+    @Override
+    public String getFirstName() {
+        return super.getFirstName();
+    }
+
+    @Override
+    public String getLastName() {
+        return super.getLastName();
+    }
+
+    @Override
+    public String getTumID() {
+        return super.getTumID();
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
 }
