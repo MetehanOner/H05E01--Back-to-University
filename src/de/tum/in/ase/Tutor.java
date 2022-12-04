@@ -14,7 +14,7 @@ public class Tutor extends Participant{
     @Override
     public void attend(Lecture lecture) {
 
-
+        lecture.addParticipant(this);
 
     }
 
