@@ -12,7 +12,12 @@ public class LectureHall {
     public LectureHall(String name, int capacity){
 
         setName(name);
-        setCapacity(capacity);
+
+        if(capacity <= 90){
+            setCapacity(90);
+        } else {
+            setCapacity(capacity);
+        }
 
     }
 
