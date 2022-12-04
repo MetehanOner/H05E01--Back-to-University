@@ -33,7 +33,8 @@ public class LectureHall {
 
         }
 
-        Student[][] rowList = new Student[30][getRows()];
+        int place = 30;
+        Student[][] rowList = new Student[place][getRows()];
         setRowsOfStudents(rowList);
 
     }
@@ -47,19 +48,25 @@ public class LectureHall {
             System.out.println(getName() + " hall doesn't have enough places for all the students!");
             System.out.println("We can place only the first " +getCapacity()+ " out of "+waitingStudents.size()+" students.");
             corner = getCapacity();
+
+            for(int i = 0; i < corner ; i++) {
+                getRowsOfStudents()[i%30][i/30] = waitingStudents.get(i);
+            }
+
         } else {
             corner = waitingStudents.size();
+
+            for(int i = 0; i < corner ; i++) {
+                getRowsOfStudents()[i%30][i/30] = waitingStudents.get(i);
+            }
+
             System.out.println("All students are sitting in the lecture hall.");
         }
 
-        for(int i = 0; i < corner ; i++) {
-            getRowsOfStudents()[i%30][i/30] = waitingStudents.get(i);
-        }
+        System.out.print(this.toString());
+        //StringBuilder hall = new StringBuilder(getName() + " hall:\n");
 
-        //System.out.print(this.toString());
-        StringBuilder hall = new StringBuilder(getName() + " hall:\n");
-
-        for (int i=0; i < getRows(); i++) {
+        /*for (int i=0; i < getRows(); i++) {
             hall.append("Row ").append(i + 1).append(": ");
             for (int j=0; j<30; j++){
                     if (i*30+j < corner){
@@ -70,9 +77,7 @@ public class LectureHall {
                     }
                 }
             hall.append("\n");
-        }
-
-        System.out.print(hall);
+        }*/
 
     }
 
@@ -83,17 +88,22 @@ public class LectureHall {
     @Override
     public String toString() {
 
-        String hall = "";
+        StringBuilder hall = new StringBuilder(getName() + " hall:\n");
 
         for (int i=0; i < getRows(); i++) {
-            hall = hall + "Row "+(i+1)+": ";
+            hall.append("Row ").append(i + 1).append(": ");
             for (int j=0; j<30; j++){
-                hall = hall + "["+ getRowsOfStudents()[j][i].getName() + "]" ;
+                if (i*30+j < getCapacity()){
+                    hall.append("[").append(getRowsOfStudents()[j][i].getName()).append("]");
+                }
+                else{
+                    hall.append("[]");
+                }
             }
-            hall += "\n";
+            hall.append("\n");
         }
 
-        return hall;
+        return String.valueOf(hall);
 
     }
 
