@@ -2,6 +2,7 @@ package de.tum.in.ase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Lecture {
 
@@ -40,7 +41,7 @@ public class Lecture {
         if(p instanceof Student){
 
             for(int i = 0; i < getStudents().size(); i++){
-                if (getStudents().get(i) == p){
+                if (Objects.equals(getStudents().get(i).getTumID(), p.getTumID())){
                    System.out.println(getStudents().get(i).getName() +" tumID:"+ getStudents().get(i).getTumID() +" already attends/holds the lecture.");
                 }
             }
@@ -50,7 +51,7 @@ public class Lecture {
         } else if (p instanceof Tutor) {
 
             for(int i = 0; i < getTutors().size(); i++){
-                if (getTutors().get(i) == p){
+                if (Objects.equals(getTutors().get(i).getTumID(), p.getTumID())){
                     System.out.println(getTutors().get(i).getName() +" tumID:"+ getTutors().get(i).getTumID() +" already attends/holds the lecture.");
                 }
             }
@@ -60,7 +61,7 @@ public class Lecture {
         } else if (p instanceof ExerciseInstructor){
 
             for(int i = 0; i < getExerciseInstructors().size(); i++){
-                if (getExerciseInstructors().get(i) == p){
+                if (Objects.equals(getExerciseInstructors().get(i).getTumID(), p.getTumID())){
                     System.out.println(getExerciseInstructors().get(i).getName() +" tumID:"+ getExerciseInstructors().get(i).getTumID() +" already attends/holds the lecture.");
                 }
             }
@@ -69,7 +70,7 @@ public class Lecture {
 
         } else if (p instanceof Lecturer) {
 
-            if(!(getLecturer()==null)) {
+            if(!(getLecturer() == null)) {
                 System.out.println("This lecture already has a lecturer!");
             } else {
                 setLecturer((Lecturer) p);
@@ -78,7 +79,6 @@ public class Lecture {
         } else {
             System.out.println("No such participants allowed in this lecture!");
         }
-
 
     }
 
