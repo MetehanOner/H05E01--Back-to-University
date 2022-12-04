@@ -67,7 +67,7 @@ public class LectureHall {
     @Override
     public String toString() {
 
-        String hall = "";
+        String hall = ""; //hello
 
         for (int i=0; i<getRows(); i++){
             hall += "Row "+(i+1)+": ";
