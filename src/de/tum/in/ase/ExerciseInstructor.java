@@ -33,26 +33,6 @@ public class ExerciseInstructor extends Participant {
     }
 
     @Override
-    public String getLastName() {
-        return super.getLastName();
-    }
-
-    @Override
-    public String getFirstName() {
-        return super.getFirstName();
-    }
-
-    @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
-    public String getTumID() {
-        return super.getTumID();
-    }
-
-    @Override
     public String toString() {
         return "Exercise Instructor " + super.getName();
     }
