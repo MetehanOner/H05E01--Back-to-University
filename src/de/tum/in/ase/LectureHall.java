@@ -33,7 +33,7 @@ public class LectureHall {
 
         }
 
-        Student[][] rowList = new Student[30][getRows()];
+        Student[][] rowList = new Student[getRows()][30];
         setRowsOfStudents(rowList);
 
     }
@@ -57,7 +57,7 @@ public class LectureHall {
         }
 
         //System.out.print(this.toString());
-        String hall = "";
+        String hall = getName() + " hall:\n";
 
         for (int i=0; i < getRows(); i++) {
             hall = hall + "Row "+(i+1)+": ";
