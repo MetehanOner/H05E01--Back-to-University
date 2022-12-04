@@ -67,7 +67,7 @@ public class Main {
 
     //TODO think of the most suitable access modifier for those helper methods
 
-    public static List<Student> generateStudents(int amount){
+    protected static List<Student> generateStudents(int amount){
 
         List<Student> sList = new ArrayList<>();
 
@@ -81,7 +81,7 @@ public class Main {
         return sList;
     }
 
-    public static List<Tutor> generateTutors(int amount, Lecture lecture){
+    protected static List<Tutor> generateTutors(int amount, Lecture lecture){
 
         List<Tutor> tList = new ArrayList<>();
 
