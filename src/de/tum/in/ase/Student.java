@@ -11,6 +11,7 @@ public class Student extends Participant {
 
         lecture.addParticipant(this);
 
+
     }
 
     @Override

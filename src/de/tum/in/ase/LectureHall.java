@@ -15,14 +15,17 @@ public class LectureHall {
         setName(name);
 
         if(capacity <= 90){
+            setRows(3);
             setCapacity(90);
         } else {
             int temp = capacity % 30;
 
             if(temp == 0){
+                setCapacity(capacity/30);
                 setCapacity(capacity);
             } else {
                 capacity = capacity - temp;
+                setRows(capacity/30);
                 setCapacity(capacity);
             }
 
@@ -34,13 +37,30 @@ public class LectureHall {
 
         System.out.println("Waiting students: " + waitingStudents.size());
 
-        if(waitingStudents.size()>getCapacity()){
+        if(waitingStudents.size() > getCapacity()){
             System.out.println(getName() + " hall doesn't have enough places for all the students!");
             System.out.println("We can place only the first " +getCapacity()+ " out of "+waitingStudents.size()+" students.");
 
+            int remainder = getCapacity() % 30;
+            int sizeY = (getCapacity()-remainder)/30;
+
+            for(int i = 0; i < sizeY ; i++) {
+                for(int j = 0; j < 30; j++) {
+                    for (int k=0; k < waitingStudents.size(); k++) {
+                        getRowsOfStudents()[j][i] = waitingStudents.get(k);
+                    }
+                }
+            }
+
+            System.out.println(getRowsOfStudents().toString());
+
+        } else if (waitingStudents.size() == getCapacity()) {
+
+
+            System.out.println("All students are sitting in the lecture hall.");
         }
 
-        System.out.println("All students are sitting in the lecture hall.");
+
 
     }
 
