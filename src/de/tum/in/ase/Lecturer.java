@@ -24,7 +24,7 @@ public class Lecturer extends Participant {
 
     public void addLecture(Lecture lecture) {
 
-        if(Objects.equals(lecture.getLecturer().getTumID(), getTumID())){
+        if(Objects.equals(lecture.getLecturer(), this)){
             System.out.println("The lecture "+lecture.getName()+" is already held by another lecturer.");
         } else {
             getLectures().add(lecture);
