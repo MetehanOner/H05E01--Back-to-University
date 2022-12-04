@@ -29,8 +29,6 @@ public class Lecturer extends Participant {
 
         if(lecture.getLecturer() == null){
 
-            Lecturer profL = new Lecturer(getFirstName(), getLastName(), getTumID(), getTitle());
-            lecture.setLecturer(profL);
             getLectures().add(lecture);
 
         }
