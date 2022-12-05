@@ -50,20 +50,18 @@ public class Lecture {
 
         } else if (p instanceof Tutor) {
 
-            for(int i = 0; i < getTutors().size(); i++) {
-                if (Objects.equals(getTutors().get(i).getTumID(), p.getTumID())){
-                    System.out.println(getTutors().get(i).getName() +" tumID:"+ getTutors().get(i).getTumID() +" already attends/holds the lecture.");
-                }
+            if (getTutors().contains((Tutor) p)){
+                int index = getTutors().indexOf((Tutor) p);
+                System.out.println(getTutors().get(index).getName() +" tumID:"+ getStudents().get(index).getTumID() +" already attends/holds the lecture.");
             }
 
             getTutors().add((Tutor) p);
 
         } else if (p instanceof ExerciseInstructor){
 
-            for(int i = 0; i < getExerciseInstructors().size(); i++){
-                if (Objects.equals(getExerciseInstructors().get(i).getTumID(), p.getTumID())){
-                    System.out.println(getExerciseInstructors().get(i).getName() +" tumID:"+ getExerciseInstructors().get(i).getTumID() +" already attends/holds the lecture.");
-                }
+            if (getExerciseInstructors().contains((ExerciseInstructor) p)){
+                int index = getExerciseInstructors().indexOf((ExerciseInstructor) p);
+                System.out.println(getExerciseInstructors().get(index).getName() +" tumID:"+ getExerciseInstructors().get(index).getTumID() +" already attends/holds the lecture.");
             }
 
             getExerciseInstructors().add((ExerciseInstructor) p);
@@ -84,7 +82,7 @@ public class Lecture {
 
     public void addParticipants(List<Participant> participants){
 
-        for(int i = 0; i < participants.size(); i++){
+        for(int i = 0; i < participants.size(); i++) {
             if(participants.get(i) instanceof Student){
                 addParticipant(participants.get(i));
             } else if (participants.get(i) instanceof Tutor) {
