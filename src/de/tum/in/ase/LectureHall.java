@@ -64,20 +64,6 @@ public class LectureHall {
         }
 
         System.out.print(this.toString());
-        //StringBuilder hall = new StringBuilder(getName() + " hall:\n");
-
-        /*for (int i=0; i < getRows(); i++) {
-            hall.append("Row ").append(i + 1).append(": ");
-            for (int j=0; j<30; j++){
-                    if (i*30+j < corner){
-                         hall.append("[").append(getRowsOfStudents()[j][i].getName()).append("]");
-                    }
-                    else{
-                        hall.append("[]");
-                    }
-                }
-            hall.append("\n");
-        }*/
 
     }
 

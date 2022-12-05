@@ -40,10 +40,9 @@ public class Lecture {
 
         if(p instanceof Student){
 
-            for(int i = 0; i < getStudents().size(); i++){
-                if (Objects.equals(getStudents().get(i).getTumID(), p.getTumID())){
-                   System.out.println(getStudents().get(i).getName() +" tumID:"+ getStudents().get(i).getTumID() +" already attends/holds the lecture.");
-                }
+            if (getStudents().contains((Student) p)){
+                int index = getStudents().indexOf((Student) p);
+                System.out.println(getStudents().get(index).getName() +" tumID:"+ getStudents().get(index).getTumID() +" already attends/holds the lecture.");
             }
 
             //not related to amount of students interesting??
