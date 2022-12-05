@@ -16,7 +16,7 @@ public class ExerciseInstructor extends Participant {
     @Override
     public void attend(Lecture lecture) {
 
-        //if(lecture.getExerciseInstructors().contains(this)){
+        if(lecture.getExerciseInstructors().contains(this)){
 
             int index = this.lecture.getExerciseInstructors().indexOf(this);
             int indices = lecture.getExerciseInstructors().indexOf(this);
@@ -28,7 +28,10 @@ public class ExerciseInstructor extends Participant {
                 lecture.addParticipant(s);
             }
 
-        //}
+        } else {
+            Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
+            lecture.addParticipant(s);
+        }
 
 
         /*if(lecture.getExerciseInstructors().contains(this)){
