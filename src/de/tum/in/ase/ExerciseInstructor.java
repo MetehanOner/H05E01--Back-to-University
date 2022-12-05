@@ -16,19 +16,7 @@ public class ExerciseInstructor extends Participant {
     @Override
     public void attend(Lecture lecture) {
 
-        if(lecture.getExerciseInstructors().size() == 0){
-            lecture.addParticipant(this);
-        } else {
-            for(int i=0; i< lecture.getExerciseInstructors().size(); i++){
-                if(Objects.equals(lecture.getExerciseInstructors().get(i).getTumID(), getTumID())){
-                    lecture.addParticipant(this);
-                }
-            }
-
-            Student s = new Student(getFirstName(), getLastName(), getTumID());
-            lecture.addParticipant(s);
-
-        }
+        lecture.addParticipant(this);
 
     }
 

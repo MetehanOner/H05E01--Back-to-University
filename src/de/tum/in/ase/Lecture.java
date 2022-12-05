@@ -43,28 +43,30 @@ public class Lecture {
             if (getStudents().contains((Student) p)){
                 int index = getStudents().indexOf((Student) p);
                 System.out.println(getStudents().get(index).getName() +" tumID:"+ getStudents().get(index).getTumID() +" already attends/holds the lecture.");
-            }
+            } else {
 
-            //not related to amount of students interesting??
-            getStudents().add((Student) p);
+                //not related to amount of students interesting??
+                students.add((Student) p);
+
+            }
 
         } else if (p instanceof Tutor) {
 
-            if (getTutors().contains((Tutor) p)){
-                int index = getTutors().indexOf((Tutor) p);
-                System.out.println(getTutors().get(index).getName() +" tumID:"+ getStudents().get(index).getTumID() +" already attends/holds the lecture.");
+            if (tutors.contains((Tutor) p)){
+                int index = tutors.indexOf((Tutor) p);
+                System.out.println(tutors.get(index).getName() +" tumID:"+ tutors.get(index).getTumID() +" already attends/holds the lecture.");
+            } else {
+                tutors.add((Tutor) p);
             }
-
-            getTutors().add((Tutor) p);
 
         } else if (p instanceof ExerciseInstructor){
 
-            if (getExerciseInstructors().contains((ExerciseInstructor) p)){
-                int index = getExerciseInstructors().indexOf((ExerciseInstructor) p);
-                System.out.println(getExerciseInstructors().get(index).getName() +" tumID:"+ getExerciseInstructors().get(index).getTumID() +" already attends/holds the lecture.");
+            if (exerciseInstructors.contains((ExerciseInstructor) p)){
+                int index = exerciseInstructors.indexOf((ExerciseInstructor) p);
+                System.out.println(exerciseInstructors.get(index).getName() +" tumID:"+ exerciseInstructors.get(index).getTumID() +" already attends/holds the lecture.");
+            } else {
+                exerciseInstructors.add((ExerciseInstructor) p);
             }
-
-            getExerciseInstructors().add((ExerciseInstructor) p);
 
         } else if (p instanceof Lecturer) {
 
