@@ -23,32 +23,6 @@ public class ExerciseInstructor extends Participant {
             lecture.addParticipant(s);
         }
 
-        /*if(lecture.getExerciseInstructors().contains(this)){
-
-            int index = this.lecture.getExerciseInstructors().indexOf(this);
-            int indices = lecture.getExerciseInstructors().indexOf(this);
-
-            if(this.lecture.getExerciseInstructors().get(index) == lecture.getExerciseInstructors().get(indices)){
-                System.out.println(lecture.getExerciseInstructors().get(indices).getName() +" tumID:"+ lecture.getExerciseInstructors().get(indices).getTumID() +" already attends/holds the lecture.");
-            } else {
-                Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
-                lecture.addParticipant(s);
-            }
-
-        } else {
-            Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
-            lecture.addParticipant(s);
-        }*/
-
-
-        /*if(lecture.getExerciseInstructors().contains(this)){
-            int indicators = lecture.getExerciseInstructors().indexOf(this);
-            System.out.println(lecture.getExerciseInstructors().get(indicators).getName() +" tumID:"+ lecture.getExerciseInstructors().get(indicators).getTumID() +" already attends/holds the lecture.");
-        } else {
-            Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
-            lecture.addParticipant(s);
-        }*/
-
     }
 
     @Override
