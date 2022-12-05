@@ -8,14 +8,14 @@ public class Tutor extends Participant{
 
     public Tutor(String firstName, String lastName, String tumID, Lecture lecture) {
         super(firstName, lastName, tumID);
-        setLecture(lecture);
+        this.lecture = lecture;
     }
 
     @Override
     public void attend(Lecture lecture) {
 
         //nichts
-        if(this.lecture == lecture){
+        if(Objects.equals(this.lecture.getId(), lecture.getId())){
             System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
         } else {
             Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
