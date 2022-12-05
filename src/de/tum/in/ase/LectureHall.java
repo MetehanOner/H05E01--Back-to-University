@@ -1,5 +1,6 @@
 package de.tum.in.ase;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -44,10 +45,10 @@ public class LectureHall {
         System.out.println("Waiting students: " + waitingStudents.size());
 
         int corner;
-        if(waitingStudents.size() > getCapacity()){
+        if(waitingStudents.size() > capacity){
             System.out.println(getName() + " hall doesn't have enough places for all the students!");
             System.out.println("We can place only the first " +getCapacity()+ " out of "+waitingStudents.size()+" students.");
-            corner = getCapacity();
+            corner = capacity;
 
             for(int i = 0; i < corner ; i++) {
                 getRowsOfStudents()[i/30][i%30] = waitingStudents.get(i);
@@ -82,10 +83,10 @@ public class LectureHall {
         StringBuilder hall = new StringBuilder(getName() + " hall:\n");
         int place = 30;
 
-        for (int i=0; i < getRows(); i++) {
+        for (int i=0; i < rows; i++) {
             hall.append("Row ").append(i + 1).append(": ");
             for (int j=0; j < rowsOfStudents[i].length; j++) {
-                if ((i*place)+j < getCapacity()){
+                if ((i*place)+j < capacity){
                     hall.append("[").append(rowsOfStudents[i][j].getName()).append("]");
                 }
                 else {
