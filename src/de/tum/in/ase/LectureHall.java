@@ -34,7 +34,7 @@ public class LectureHall {
         }
 
         int place = 30;
-        Student[][] rowList = new Student[place][getRows()];
+        Student[][] rowList = new Student[rows][place];
         setRowsOfStudents(rowList);
 
     }
@@ -50,14 +50,14 @@ public class LectureHall {
             corner = getCapacity();
 
             for(int i = 0; i < corner ; i++) {
-                getRowsOfStudents()[i%30][i/30] = waitingStudents.get(i);
+                getRowsOfStudents()[i/30][i%30] = waitingStudents.get(i);
             }
 
         } else {
             corner = waitingStudents.size();
 
             for(int i = 0; i < corner ; i++) {
-                getRowsOfStudents()[i%30][i/30] = waitingStudents.get(i);
+                getRowsOfStudents()[i/30][i%30] = waitingStudents.get(i);
             }
 
             System.out.println("All students are sitting in the lecture hall.");
@@ -71,7 +71,7 @@ public class LectureHall {
 
 
         for(int i = 0; i < getCapacity() ; i++) {
-            getRowsOfStudents()[i%30][i/30] = null;
+            getRowsOfStudents()[i/30][i%30] = null;
         }
 
     }
