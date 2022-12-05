@@ -86,7 +86,7 @@ public class LectureHall {
             hall.append("Row ").append(i + 1).append(": ");
             for (int j=0; j < place; j++) {
                 if ((i*place)+j < getCapacity()){
-                    hall.append("[").append(getRowsOfStudents()[j][i].getName()).append("]");
+                    hall.append("[").append(getRowsOfStudents()[i][j].getName()).append("]");
                 }
                 else {
                     hall.append("[]");
