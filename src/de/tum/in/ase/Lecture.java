@@ -52,21 +52,21 @@ public class Lecture {
 
         } else if (p instanceof Tutor) {
 
-            if (tutors.contains((Tutor) p)){
+            /*if (tutors.contains((Tutor) p)){
                 int index = tutors.indexOf((Tutor) p);
                 System.out.println(tutors.get(index).getName() +" tumID:"+ tutors.get(index).getTumID() +" already attends/holds the lecture.");
-            } else {
+            } else { */
                 tutors.add((Tutor) p);
-            }
+            //}
 
         } else if (p instanceof ExerciseInstructor){
 
-            if (exerciseInstructors.contains((ExerciseInstructor) p)){
+            /*if (exerciseInstructors.contains((ExerciseInstructor) p)){
                 int index = exerciseInstructors.indexOf((ExerciseInstructor) p);
                 System.out.println(exerciseInstructors.get(index).getName() +" tumID:"+ exerciseInstructors.get(index).getTumID() +" already attends/holds the lecture.");
-            } else {
+            } else {*/
                 exerciseInstructors.add((ExerciseInstructor) p);
-            }
+            //}
 
         } else if (p instanceof Lecturer) {
 
