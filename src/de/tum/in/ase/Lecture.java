@@ -40,8 +40,8 @@ public class Lecture {
 
         if(p instanceof Student){
 
-            if (students.contains((Student) p)){
-                int index = students.indexOf((Student) p);
+            if (students.contains(p)){
+                int index = students.indexOf(p);
                 System.out.println(students.get(index).getName() +" tumID:"+ students.get(index).getTumID() +" already attends/holds the lecture.");
             } else {
 
@@ -52,21 +52,21 @@ public class Lecture {
 
         } else if (p instanceof Tutor) {
 
-            /*if (tutors.contains((Tutor) p)){
-                int index = tutors.indexOf((Tutor) p);
+            if (tutors.contains(p)){
+                int index = tutors.indexOf(p);
                 System.out.println(tutors.get(index).getName() +" tumID:"+ tutors.get(index).getTumID() +" already attends/holds the lecture.");
-            } else { */
+            } else {
                 tutors.add((Tutor) p);
-            //}
+            }
 
         } else if (p instanceof ExerciseInstructor){
 
-            /*if (exerciseInstructors.contains((ExerciseInstructor) p)){
-                int index = exerciseInstructors.indexOf((ExerciseInstructor) p);
+            if (exerciseInstructors.contains(p)){
+                int index = exerciseInstructors.indexOf(p);
                 System.out.println(exerciseInstructors.get(index).getName() +" tumID:"+ exerciseInstructors.get(index).getTumID() +" already attends/holds the lecture.");
-            } else {*/
+            } else {
                 exerciseInstructors.add((ExerciseInstructor) p);
-            //}
+            }
 
         } else if (p instanceof Lecturer) {
 
