@@ -69,6 +69,7 @@ public class LectureHall {
 
     public void empty(){
 
+
         for(int i = 0; i < getCapacity() ; i++) {
             getRowsOfStudents()[i%30][i/30] = null;
         }

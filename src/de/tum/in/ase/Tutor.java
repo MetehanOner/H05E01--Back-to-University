@@ -14,7 +14,12 @@ public class Tutor extends Participant{
     @Override
     public void attend(Lecture lecture) {
 
-        lecture.addParticipant(this);
+        if(lecture.getTutors().contains(this)){
+            lecture.addParticipant(this);
+        } else {
+            Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
+            lecture.addParticipant(s);
+        }
 
     }
 

@@ -40,9 +40,9 @@ public class Lecture {
 
         if(p instanceof Student){
 
-            if (getStudents().contains((Student) p)){
-                int index = getStudents().indexOf((Student) p);
-                System.out.println(getStudents().get(index).getName() +" tumID:"+ getStudents().get(index).getTumID() +" already attends/holds the lecture.");
+            if (students.contains((Student) p)){
+                int index = students.indexOf((Student) p);
+                System.out.println(students.get(index).getName() +" tumID:"+ students.get(index).getTumID() +" already attends/holds the lecture.");
             } else {
 
                 //not related to amount of students interesting??
@@ -90,7 +90,11 @@ public class Lecture {
             } else if (participants.get(i) instanceof Tutor) {
                 addParticipant(participants.get(i));
             } else if (participants.get(i) instanceof ExerciseInstructor) {
-                addParticipant(participants.get(i));;
+                addParticipant(participants.get(i));
+            } else if (participants.get(i) instanceof Lecturer){
+                addParticipant(participants.get(i));
+            } else {
+                System.out.println("No such participants allowed in this lecture!");
             }
         }
 
@@ -99,7 +103,7 @@ public class Lecture {
     public void takePlace(){
 
         //place students
-        getLectureHall().placeStudents(getStudents());
+        getLectureHall().placeStudents(students);
 
         getLecturer().openLecture(this);
 
