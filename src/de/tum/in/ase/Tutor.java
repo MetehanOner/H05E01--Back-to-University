@@ -14,6 +14,8 @@ public class Tutor extends Participant{
     @Override
     public void attend(Lecture lecture) {
 
+        //nichts
+
         if(this.lecture.getTutors().contains(this)){
             System.out.println( " tumID:"+ "" +" already attends/holds the lecture.");
         } else {
