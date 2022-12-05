@@ -16,8 +16,7 @@ public class Tutor extends Participant{
 
         //nichts
         if(this.lecture == lecture){
-            int indices = lecture.getExerciseInstructors().indexOf(this);
-            System.out.println(lecture.getTutors().get(indices).getName() +" tumID:"+ lecture.getTutors().get(indices).getTumID() +" already attends/holds the lecture.");
+            System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
         } else {
             Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
             lecture.addParticipant(s);
