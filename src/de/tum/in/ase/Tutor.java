@@ -18,13 +18,18 @@ public class Tutor extends Participant{
             return;
         }
 
-        if(Objects.equals(this.lecture.getId(), lecture.getId())){
-            lecture.addParticipant(this);
-            System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
-        }
-        else {
+        if(this.lecture == null){
             Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
             lecture.addParticipant(s);
+        } else {
+            if(Objects.equals(this.lecture.getId(), lecture.getId())){
+                lecture.addParticipant(this);
+                System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
+            }
+            else {
+                Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
+                lecture.addParticipant(s);
+            }
         }
 
     }
