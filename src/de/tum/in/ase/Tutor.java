@@ -25,7 +25,6 @@ public class Tutor extends Participant{
             if(Objects.equals(this.lecture, lecture)){
                 lecture.addParticipant(this);
                 System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
-
             }
             else {
                 Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());

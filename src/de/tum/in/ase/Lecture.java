@@ -38,7 +38,7 @@ public class Lecture {
 
     public void addParticipant(Participant p){
 
-        if(p instanceof Student){
+        if(p instanceof Student student){
 
             if (students.contains(p)){
                 int index = students.indexOf(p);
@@ -46,26 +46,26 @@ public class Lecture {
             } else {
 
                 //not related to amount of students interesting??
-                students.add((Student) p);
+                students.add(student);
 
             }
 
-        } else if (p instanceof Tutor) {
+        } else if (p instanceof Tutor tutor) {
 
-            if (tutors.contains(p)){
-                int index = tutors.indexOf(p);
+            if (tutors.contains(tutor)){
+                int index = tutors.indexOf(tutor);
                 System.out.println(tutors.get(index).getName() +" tumID:"+ tutors.get(index).getTumID() +" already attends/holds the lecture.");
             } else {
-                tutors.add((Tutor) p);
+                tutors.add(tutor);
             }
 
-        } else if (p instanceof ExerciseInstructor){
+        } else if (p instanceof ExerciseInstructor exerciseInstructor){
 
             if (exerciseInstructors.contains(p)){
                 int index = exerciseInstructors.indexOf(p);
                 System.out.println(exerciseInstructors.get(index).getName() +" tumID:"+ exerciseInstructors.get(index).getTumID() +" already attends/holds the lecture.");
             } else {
-                exerciseInstructors.add((ExerciseInstructor) p);
+                exerciseInstructors.add(exerciseInstructor);
             }
 
         } else if (p instanceof Lecturer) {
