@@ -16,10 +16,21 @@ public class ExerciseInstructor extends Participant {
     @Override
     public void attend(Lecture lecture) {
 
+        if(lecture == null){
+            return;
+        }
+
+        if(this.lecture == null){
+            Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
+            lecture.addParticipant(s);
+        }
+
         if(Objects.equals(this.lecture.getId(), lecture.getId())){
+            lecture.addParticipant(this);
             System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
-        } else {
-            Student s = new Student(super.getFirstName(), super.getLastName(), super.getTumID());
+        }
+        else {
+            Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
             lecture.addParticipant(s);
         }
 
