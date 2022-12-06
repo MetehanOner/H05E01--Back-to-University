@@ -25,7 +25,7 @@ public class ExerciseInstructor extends Participant {
             lecture.addParticipant(s);
         } else {
             if(Objects.equals(this.lecture, lecture)){
-                lecture.addParticipant(this);
+                //lecture.addParticipant(this);
                 System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
             }
             else {
