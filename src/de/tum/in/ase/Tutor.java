@@ -22,9 +22,10 @@ public class Tutor extends Participant{
             Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
             lecture.addParticipant(s);
         } else {
-            if(Objects.equals(this.lecture.getId(), lecture.getId())){
+            if(Objects.equals(this.lecture, lecture)){
                 lecture.addParticipant(this);
                 System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
+
             }
             else {
                 Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
