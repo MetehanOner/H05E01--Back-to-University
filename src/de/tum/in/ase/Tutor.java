@@ -18,11 +18,6 @@ public class Tutor extends Participant{
             return;
         }
 
-        if(this.lecture == null){
-            Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
-            lecture.addParticipant(s);
-        }
-
         if(Objects.equals(this.lecture.getId(), lecture.getId())){
             lecture.addParticipant(this);
             System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
