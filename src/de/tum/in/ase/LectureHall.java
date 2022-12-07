@@ -93,7 +93,9 @@ public class LectureHall {
                     hall.append("[]");
                 }
             }
-            hall.append("\n");
+            if (!(i == rows-1)){
+                hall.append("\n");
+            }
         }
 
         return String.valueOf(hall);
