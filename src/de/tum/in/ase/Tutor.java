@@ -14,15 +14,15 @@ public class Tutor extends Participant{
     @Override
     public void attend(Lecture lecture) {
 
-        if(lecture == null){
+        /*if(lecture == null){
             return;
-        }
+        }*/
 
-        if(this.lecture == null){
+        if(this.lecture == null) {
             Student s = new Student(this.getFirstName(), this.getLastName(), this.getTumID());
             lecture.addParticipant(s);
         } else {
-            if(Objects.equals(this.lecture, lecture)){
+            if(Objects.equals(this.lecture, lecture)) {
                 lecture.addParticipant(this);
                 System.out.println(this.getName() +" tumID:"+ this.getTumID() +" already attends/holds the lecture.");
             }

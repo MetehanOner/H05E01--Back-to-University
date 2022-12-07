@@ -86,7 +86,7 @@ public class LectureHall {
         for (int i=0; i < rows; i++) {
             hall.append("Row ").append(i + 1).append(": ");
             for (int j=0; j < rowsOfStudents[i].length; j++) {
-                if ((i*place)+j < capacity){
+                if ((i*place)+j <= capacity){
                     hall.append("[").append(rowsOfStudents[i][j].getName()).append("]");
                 }
                 else {
